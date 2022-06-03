@@ -16,7 +16,7 @@ def choose_comparison():
 def current_answer(a, b):
     if a['follower_count'] < b['follower_count']:
         return 'B'
-    else:
+    elif a['follower_count'] > b['follower_count']:
         return 'A'
 
 
