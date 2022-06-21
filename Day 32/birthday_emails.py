@@ -37,6 +37,7 @@ def main():
     today = datetime.datetime.today().date()
     birthday_data = pandas.read_csv("/home/bjolie/100daysofpython/Day 32/birthdays.csv")
     dict_data = birthday_data.to_dict(orient="records")
+    letter_templates = create_templates()
     for birthday in dict_data:
         year = birthday["year"]
         day = birthday["day"]
@@ -44,7 +45,6 @@ def main():
         email = birthday["email"]
         name = birthday["name"]
         new_date = datetime.datetime(year, month, day).date()
-        letter_templates = create_templates()
         if today == new_date:
             send_birthday_email(letter_templates, name, email)
 
