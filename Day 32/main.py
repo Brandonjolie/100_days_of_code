@@ -15,7 +15,7 @@ def send_motivational_email():
     connection.login(gmail_user, gmail_pass)
     connection.sendmail(
         from_addr=gmail_user,
-        to_addrs="bjolie@beanfield.com",
+        to_addrs=gmail_user,
         msg=f"Subject:Hello\n\n{quote}",
     )
     connection.close()
