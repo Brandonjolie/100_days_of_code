@@ -29,8 +29,6 @@ results = soup.find_all(name="li", class_="lrv-u-width-100p")
 song_names = []
 for i in range(0, len(results), 2):
     song_names.append(results[i].h3.text.strip())
-data = sp.search(song_names[0])["tracks"]["items"]
-data2 = sp.search(f"track:{song_names[0]} year:{year}")
 songs_to_add = []
 id = sp.current_user()["id"]
 for song in song_names:
